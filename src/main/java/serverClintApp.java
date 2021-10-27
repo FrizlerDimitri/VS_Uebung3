@@ -1,22 +1,19 @@
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.UnknownHostException;
-import java.util.Locale;
 
 public class serverClintApp {
     public static void main(String[] args) {
 
         int port = 8070;
 
-        String role = "server";
+        String role = "client";
 
         if (role.toLowerCase().equals("server")) {
             startSever(port);
-        } else if (role.toLowerCase().equals("server")) {
-            starClient(port);
+        } else if (role.toLowerCase().equals("client")) {
+            startClient(port);
         }
-
 
     }
 
@@ -61,12 +58,13 @@ public class serverClintApp {
     }
 
 
-    private static void starClient(int port) {
+    private static void startClient(int port) {
 
         Runnable run = () -> {
 
             try {
-                Socket s = new Socket("localhost", port);
+                Socket s = new Socket("192.168.178.38", port); //ip Laptop : 192.168.178.38
+                                                                        //ip PC : 192.168.178.44
                 InputStream in = s.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
