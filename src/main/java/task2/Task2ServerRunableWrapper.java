@@ -21,13 +21,7 @@ public class Task2ServerRunableWrapper implements Runnable {
     public void run() {
             try {
                 System.out.println("Connected to client");
-
-                //InputStream in= socket.getInputStream();
                 OutputStream out = socket.getOutputStream();
-
-                //BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-
-                //PrintWriter writer = new PrintWriter(out);
 
                 List<String> list = Files.readAllLines(Paths.get(indexPath));
 
@@ -38,13 +32,10 @@ public class Task2ServerRunableWrapper implements Runnable {
 
                 for (String line : list) {
                     out.write((line).getBytes());
-                    //writer.println(line);
                 }
 
                 out.flush();
-                //in.close();
                 out.close();
-
 
             } catch (IOException e) {
 

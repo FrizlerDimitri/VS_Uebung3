@@ -33,11 +33,6 @@ public class Task2Server {
                 executorService.execute(run);
             }
 
-
-
-
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }

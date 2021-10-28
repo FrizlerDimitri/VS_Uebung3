@@ -1,6 +1,7 @@
 import task1.Task1Client;
 import task1.Task1Server;
 import task2.Task2Server;
+import task3.Task3Client;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,10 +11,10 @@ import java.util.List;
 public class serverClintApp {
     public static void main(String[] args) {
 
-        int port = 8061;
-        String role = "client";
+        //int port = 8061;
+        //String role = "client";
 
-        //-------------Task 1
+        //-------------Task 1 :
 
         //if (role.toLowerCase().equals("server")) {
             //startSever1(port);
@@ -21,12 +22,17 @@ public class serverClintApp {
            // startClient1(port);
         //}
 
-        //-------------Task 2
+        //-------------Task 2 :
 
        // System.out.println(Paths.get("src/main/resources/index.html").toAbsolutePath());
 
-        startServer2(port);
+        //startServer2(port);
 
+
+        //------------Task3 :
+
+        Task3Client cl= new Task3Client(1212, "im-lamport.oth-regensburg.de");
+        cl.startClient();
 
 
     }
